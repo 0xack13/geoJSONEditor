@@ -4,10 +4,15 @@
 
 <script src="lib/codemirror.js"></script>
 <link rel="stylesheet" href="lib/codemirror.css">
+<link rel="stylesheet" href="theme/3024-night.css">
 <script src="mode/javascript/javascript.js"></script>
 
 
 </head>
+
+<style type="text/css">
+      .CodeMirror {border: 1px solid black; font-size:18px}
+</style>
 
 <body>
 
@@ -15,7 +20,8 @@
 <script >
 	var myCodeMirror = CodeMirror(document.body, {
 	  value: "function myScript(){return 100;}\n",
-	  mode:  "javascript"
+	  mode:  "javascript",
+	  theme : '3024-night'
 	});
 </script>
 
