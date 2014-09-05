@@ -16,7 +16,8 @@
     top:0;
     bottom:0;
     left:0;
-    right:40%;
+    right:0;
+    width: 100%;
 }
 
 .right {
@@ -507,3 +508,4 @@ div.children a {
 .metadata td {
     padding:5px;
 }
+
