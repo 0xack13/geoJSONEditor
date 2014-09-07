@@ -127,6 +127,7 @@
 				.setLatLng(e.latlng)
 				.setContent("You clicked the map at " + e.latlng.toString())
 				.openOn(map);
+			editor.replaceRange(e.latlng.toString() + "\n", CodeMirror.Pos(editor.lastLine()));
 		}
 
 		map.on('click', onMapClick);
