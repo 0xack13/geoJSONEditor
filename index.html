@@ -29,23 +29,6 @@
             	<div id="map" style="width: 100%; height: 100%"></div>
         </div>
         <div class="right">
-            <!--
-            <div class="top">
-                <button class="collapse-button" title="Collapse">
-                    <class class="icon icon-caret-up"></class>
-                </button>
-                <div class="user fr pad1 deemphasize"><a target="_blank" href="#">anon</a><span> | </span><a href="#">login</a>
-                </div>
-                <div class="buttons">
-                    <button title="JSON Source" class="active"><span class="icon-code"></span><span> JSON</span>
-                    </button>
-                    <button title="Edit feature properties in a table"><span class="icon-table"></span><span> Table</span>
-                    </button>
-                    <button title="Help"><span class="icon-question"></span><span> Help</span>
-                    </button>
-                </div>
-            </div>
-            -->
             <div id="content_editable" class="pane">
 
             <textarea id="code" name="code"></textarea>
@@ -81,8 +64,7 @@
 	<script>
 		var ce = document.getElementById("code");
 		var editor = CodeMirror.fromTextArea(ce, {
-		  value: "test",
-		  /* , your options */
+		  value: "// Please add your code to this editor",
 		  mode: 'javascript',
 		  tabMode: 'indent',
 		  lineNumbers: true,
