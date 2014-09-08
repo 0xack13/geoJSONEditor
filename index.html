@@ -64,7 +64,6 @@
 	<script>
 		var ce = document.getElementById("code");
 		var editor = CodeMirror.fromTextArea(ce, {
-		  value: "// Please add your code to this editor",
 		  mode: 'javascript',
 		  tabMode: 'indent',
 		  lineNumbers: true,
@@ -110,6 +109,7 @@
 				.setContent("You clicked the map at " + e.latlng.toString())
 				.openOn(map);
 			editor.replaceRange(e.latlng.toString() + "\n", CodeMirror.Pos(editor.lastLine()));
+			editor.replaceRange("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng + "\n", CodeMirror.Pos(editor.lastLine()));
 		}
 
 		map.on('click', onMapClick);
