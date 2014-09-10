@@ -84,7 +84,7 @@
 			id: 'examples.map-i86knfo3'
 		}).addTo(map);
 
-
+		/*
 		L.marker([51.5, -0.09]).addTo(map)
 			.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
 
@@ -100,7 +100,7 @@
 			[51.51, -0.047]
 		]).addTo(map).bindPopup("I am a polygon.");
 
-
+		*/
 		var popup = L.popup();
 
 		function onMapClick(e) {
@@ -122,12 +122,11 @@
 
 			var geojsonFeature = JSON.parse(geojsonFeatureRaw);
 
-
-			L.geoJson(geojsonFeature, {
+			var test = L.geoJson(geojsonFeature, {
 			    style: myStyle
 			}).addTo(map);
-			var layer = e.target;
-			map.fitBounds(layer.getBounds());
+			
+			map.fitBounds(test.getBounds());
 		}
 
 		map.on('click', onMapClick);
