@@ -108,8 +108,26 @@
 				.setLatLng(e.latlng)
 				.setContent("You clicked the map at " + e.latlng.toString())
 				.openOn(map);
-			editor.replaceRange(e.latlng.toString() + "\n", CodeMirror.Pos(editor.lastLine()));
-			editor.replaceRange("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng + "\n", CodeMirror.Pos(editor.lastLine()));
+			//editor.replaceRange(e.latlng.toString() + "\n", CodeMirror.Pos(editor.lastLine()));
+			//editor.replaceRange("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng + "\n", CodeMirror.Pos(editor.lastLine()));
+			//console.log(editor.getValue());
+			var geojsonFeatureRaw = editor.getValue();
+			//var myLayer = L.geoJson().addTo(map);
+			//myLayer.addData(geojsonFeature);
+			var myStyle = {
+			    "color": "#ff7800",
+			    "weight": 5,
+			    "opacity": 0.65
+			};
+
+			var geojsonFeature = JSON.parse(geojsonFeatureRaw);
+
+
+			L.geoJson(geojsonFeature, {
+			    style: myStyle
+			}).addTo(map);
+			var layer = e.target;
+			map.fitBounds(layer.getBounds());
 		}
 
 		map.on('click', onMapClick);
